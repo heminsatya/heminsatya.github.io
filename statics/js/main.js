@@ -98,7 +98,7 @@ document.querySelector("#contact-form button").addEventListener("click", functio
 
         // Prepare the email body
         let body = `${name.value} <${email.value}>\n`;
-        body += `${message.value}`
+        body += `${message.value}`;
 
         // Submit form
         window.open(`mailto:heminsatya@outlook.com?subject=${subject.value}&body=${encodeURIComponent(body)}`);
