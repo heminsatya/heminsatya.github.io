@@ -5,13 +5,13 @@
         <!-- Meta tags for responsive design and SEO -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Home Page">
+        <meta name="description" content="Contact Page">
         <meta name="keywords" content="Personal website, Blog, Web Developer, Freelancer, Programmer">
         <meta name="sitename" content="heminsatya.hithub.io">
         <meta name="author" content="Hemin Satya">
 
         <!-- Page title -->
-        <title>Welcome to My Personal Website</title>
+        <title>Contact Me</title>
 
         <!-- Favorite icon -->
         <link rel="icon" type="image/png" href="/statics/img/fav-icon.png">
@@ -64,13 +64,13 @@
                     <!-- Main menu -->
                     <div class="navbar-collapse collapse" id="navbarsExampleDefault">
                         <ul class="navbar-nav ml-auto">
-                            <li class="navbar-item active">
+                            <li class="navbar-item">
                                 <a class="nav-link" href="/index.html">Home</a>
                             </li>
                             <li class="navbar-item">
                                 <a class="nav-link" href="/about.html">My Story</a>
                             </li>
-                            <li class="navbar-item">
+                            <li class="navbar-item active">
                                 <a class="nav-link" href="/contact.html">Contact Me</a>
                             </li>
                         </ul>
@@ -83,29 +83,50 @@
         <!-- Website main content -->
         <main class="main bg-main">
             <div class="container py-5">
-                <div class="row py-lg-4">
-                    <!-- Short introduction -->
-                    <div class="col-12 col-lg-8">
-                        <p class="h2 mb-3" style="font-weight: 300;">Hello, world</p>
-                        <h1 class="display-4 mb-3 index-page">I'm Hemin Satya</h1>
-                        <p class="lead mb-4">
-                            A freelance programmer who love writing and sharing code.
-                        </p>
-                        <p class="lead mb-4">
-                            I have been a computer programmer since 2008, and I have written code for desktop, web, and mobile.
-                            However, I worked mostly as a Web Developer.
-                        </p>
-                        <p class="lead mb-4">
-                            Thanks for visiting my webpage.
-                        </p>
-                        <button type="button" class="btn btn-outline-info btn-custom mb-4 mb-lg-0" onclick="redirect('/about.html')">READ MORE</button>
-                    </div>
-                    <div class="col-12 col-lg-4 text-center">
-                        <img class="img-thumbnail" style="border-radius: 50%;" alt="Personal Picture" src="/statics/img/my-photo.jpg">
-                    </div>
-                </div>
+                <!-- Page Heading -->
+                <h1 class="h-1 mb-0">Send Me A Message</h1>
             </div>
         </main>
+
+        <!-- Contact page -->
+        <section class="page-description bg-white">
+            <div class="container py-5">
+                <p id="form-result"></p>
+                <form method="get" action="contact.html" enctype="text/html" id="contact-form">
+                    <p>
+                        You can use the following form for sending me your message.
+                    </p>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+                                <label>*Your Name</label>
+                                <input type="text" class="form-control" name="name">
+                                <span class="text-info"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>*Email address</label>
+                                <input type="email" class="form-control" name="email">
+                                <span class="text-info"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>*Subject</label>
+                                <input type="text" class="form-control" name="subject">
+                                <span class="text-info"></span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+                                <label>*Message</label>
+                                <textarea class="form-control" rows="8" name="message"></textarea>
+                                <span class="text-info"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-custom mt-2">Submit</button>
+                </form>
+
+            </div>
+        </section>
 
         <!-- Website footer -->
         <footer class="footer">
@@ -164,9 +185,10 @@
             const windowHeight = window.innerHeight;
             const headerHeight = document.querySelector('.header').getBoundingClientRect().height;
             const footerHeight = document.querySelector('.footer').getBoundingClientRect().height;
-            const mainHeight = windowHeight - (headerHeight + footerHeight);
+            const mainHeight = document.querySelector('.main').getBoundingClientRect().height;
+            const descriptionHeight = windowHeight - (headerHeight + mainHeight + footerHeight)
             
-            document.querySelector('.main').style.minHeight = mainHeight + 'px';
+            document.querySelector('.page-description').style.minHeight = descriptionHeight + 'px';
         });
         </script>
     </body>
