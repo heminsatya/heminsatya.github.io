@@ -18,7 +18,7 @@ document.querySelector("#contact-form button").addEventListener("click", functio
     let result = true;
 
     // Change button text temporarily
-    this.innerHTML = "Submit..."
+    this.innerHTML = "Requesting..."
 
     // Form elements
     let name = document.querySelector("#contact-form [name=name]");
@@ -85,7 +85,7 @@ document.querySelector("#contact-form button").addEventListener("click", functio
 
 
     // Change button text back
-    this.innerHTML = "Submit";
+    this.innerHTML = "SUBMIT";
 
 
     // Check results
