@@ -276,6 +276,10 @@ img {
     text-transform: uppercase;
 }
 
+.footer-links ul li {
+    display: inline-block;
+}
+
 .footer-links a {
     text-decoration: none;
     font-size: 100%;
